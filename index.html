@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script type="module" src="authuser.js"></script>
+    <title>Sistema Pontomovel</title>
+</head>
+<body>
+    <p>Sistema Pontomovel</p>
+    <p>Pedidos vendidos</p>
+    <input type="text" id="filtro" placeholder="Digite sua busca">
+    <button id="botaofiltrar">Buscar</button>
+    <button id="limparfiltro">limpar</button>
+    <table id="tabela">
+      <colgroup span="8"></colgroup>
+      <tr>
+        <th>Nome</th>
+        <th>Descrição</th>
+        <th>Valor</th>
+        <th>Data da Venda</th>
+        <th>Mês</th>
+        <th>Sinal</th>
+        <th>Status</th>
+        <th>Primeiro Pagamento</th>
+      </tr>
+      <tr>
+        <td>USA</td>
+        <td>Capital dos Estados Unidos</td>
+        <td>309 milhões</td>
+        <td>01/01/2023</td>
+        <td>Janeiro</td>
+        <td>Sim</td>
+        <td>Pago</td>
+        <td>01/02/2023</td>
+      </tr>
+      <tr>
+        <td>Sweden</td>
+        <td>Capital da Suécia</td>
+        <td>9 milhões</td>
+        <td>01/02/2023</td>
+        <td>Fevereiro</td>
+        <td>Não</td>
+        <td>Pendente</td>
+        <td>01/03/2023</td>
+      </tr>
+    </table>
+
+    <form id="formItem">
+        <label for="nome" >Nome:</label>
+        <input type="text" id="nome" required>
+        <br>
+        <label for="descricao">Descrição:</label>
+        <input type="text" id="descricao" required>
+        <br>
+        <label for="valor">Valor:</label>
+        <input type="text" id="valor" required>
+        <br>
+        <label for="dataVenda">Data da Venda:</label>
+        <input type="date" id="dataVenda" required>
+        <br>
+        <label for="mes">Mês:</label>
+        <select name="mes" id="mes">
+          <option value="janeiro">Janeiro</option>
+          <option value="fevereiro">Fevereiro</option>
+          <option value="março">Março</option>
+          <option value="abril">Abril</option>
+          <option value="maio">Maio</option>
+          <option value="junho">Junho</option>
+          <option value="julho">Julho</option>
+          <option value="agosto">Agosto</option>
+          <option value="setembro">Setembro</option>
+          <option value="outubro">Outubro</option>
+          <option value="novembro">Novembro</option>
+          <option value="dezembro">Dezembro</option>
+        </select>
+        <br>
+        <label for="sinal">Sinal:</label>
+        <input type="text" id="sinal" required>
+        <br>
+        <label for="status">Status:</label>
+        <input type="text" id="status" required>
+        <br>
+        <label for="primeiroPagamento">Primeiro Pagamento:</label>
+        <input type="text" id="primeiroPagamento" required>
+        <br>
+        <input type="submit" value="Adicionar">
+        
+    </form>
+    <footer>
+      <button id="sair">Sair</button>
+      <button id="enviar">subir</button>
+    </footer>
+    <script type="module" src="main.js"></script>
+    <script type="module" src="subirfire.js"></script>
+</body>
+</html>
