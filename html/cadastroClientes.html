@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/pedidos.css">
+    <script type="module" src="/js/authuser.js"></script>
+    <title>SPM - CADASTRO CLIENTES</title>
+</head>
+<body>
+  <header>
+      <img src="/logo.png" alt="logo da ponto Movel">
+    <div class="txtheader">    
+      <p>Sistema Pontomovel</p>
+      <p>Cadastro de clientes</p>
+    </div>
+    <div>
+      <button id="sair">Sair</button>
+      <form action="home.html">
+        <input type="submit" value="Home"/>
+      </form>
+    </div>
+  </header>
+    <input type="text" id="filtro" placeholder="Digite sua busca">
+    <button id="botaofiltrar">Buscar</button>
+    <button id="limparfiltro">limpar</button>
+
+    <form id="formItem">
+        <label for="nome" >Cliente:</label>
+        <input type="text" id="cliente" required>
+        <br>
+        <label for="descricao">Descrição:</label>
+        <input type="text" id="descricao" required>
+        <br>
+        <label for="valor">Valor Total:</label>
+        <input type="text" id="valorT" required>
+        <br>
+        <label for="dataVenda">Data da venda:</label>
+        <input type="date" id="dpagamento" required>
+        <br>
+        <label for="sinal">Sinal:</label>
+        <input type="text" id="sinal" required>
+        <br>
+        <label for="mes">Mês:</label>
+        <select name="mes" id="mes1">
+          <option value="janeiro">Janeiro</option>
+          <option value="fevereiro">Fevereiro</option>
+          <option value="março">Março</option>
+          <option value="abril">Abril</option>
+          <option value="maio">Maio</option>
+          <option value="junho">Junho</option>
+          <option value="julho">Julho</option>
+          <option value="agosto">Agosto</option>
+          <option value="setembro">Setembro</option>
+          <option value="outubro">Outubro</option>
+          <option value="novembro">Novembro</option>
+          <option value="dezembro">Dezembro</option>
+        </select>
+        <br>
+        <label for="status">Data Sinal:</label>
+        <input type="date" id="dataSinal" required>
+       <br>
+        <label for="descricao">Status:</label>
+        <input type="text" id="status" required>
+        <br>
+        <label for="valor">Pagamento:</label>
+        <input type="text" id="pagamento1" required>
+        <br>
+        <label for="valor">Data 1º Pagamento:</label>
+        <input type="date" id="datapagamento1" required>
+        <br>
+        <label for="descricao">Mês:</label>
+        <select name="mes" id="mes2">
+            <option value="janeiro">Janeiro</option>
+            <option value="fevereiro">Fevereiro</option>
+            <option value="março">Março</option>
+            <option value="abril">Abril</option>
+            <option value="maio">Maio</option>
+            <option value="junho">Junho</option>
+            <option value="julho">Julho</option>
+            <option value="agosto">Agosto</option>
+            <option value="setembro">Setembro</option>
+            <option value="outubro">Outubro</option>
+            <option value="novembro">Novembro</option>
+            <option value="dezembro">Dezembro</option>
+          </select>
+        <br>
+        <label for="valor">Status:</label>
+        <input type="text" id="status1" required>
+        <br>
+        <label for="dataVenda">2º Pagamento:</label>
+        <input type="number" id="pagamento2" required>
+        <br>
+        <label for="sinal">Data 2º Pagamento:</label>
+        <input type="date" id="data2pagamento" required>
+        <br>
+        <label for="descricao">Mês:</label>
+        <select name="mes" id="mes3">
+            <option value="janeiro">Janeiro</option>
+            <option value="fevereiro">Fevereiro</option>
+            <option value="março">Março</option>
+            <option value="abril">Abril</option>
+            <option value="maio">Maio</option>
+            <option value="junho">Junho</option>
+            <option value="julho">Julho</option>
+            <option value="agosto">Agosto</option>
+            <option value="setembro">Setembro</option>
+            <option value="outubro">Outubro</option>
+            <option value="novembro">Novembro</option>
+            <option value="dezembro">Dezembro</option>
+          </select>
+          <br>
+        <label for="sinal">Status:</label>
+        <input type="number" id="status2pagamento" required>
+        <br>
+        <label for="sinal">Orçamento:</label>
+        <input type="text" id="orcamento" required>
+        <input type="submit" value="Adicionar">
+        
+    </form>
+    <footer>
+      <button id="sair" class="bsair">Sair</button>
+      <button id="enviar">subir</button>
+    </footer>
+    <script type="module" src="/js/main.js"></script>
+    <script type="module" src="/js/cadastroClientes.js"></script>
+</body>
+</html>

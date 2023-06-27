@@ -4,60 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/pedidos.css">
-    <script type="module" src="authuser.js"></script>
-    <title>Sistema Pontomovel</title>
+    <script type="module" src="/js/authuser.js"></script>
+    <title>SPM - CADASTRO COMPRAS</title>
 </head>
 <body>
   <header>
-      <img src="logo.png" alt="logo da ponto Movel">
+      <img src="/logo.png" alt="logo da ponto Movel">
     <div class="txtheader">    
       <p>Sistema Pontomovel</p>
-      <p>Pedidos vendidos</p>
+      <p>Cadastro Contas</p>
     </div>
     <div>
       <button id="sair">Sair</button>
+      <form action="home.html">
+        <input type="submit" value="Home"/>
+      </form>
     </div>
   </header>
     <input type="text" id="filtro" placeholder="Digite sua busca">
     <button id="botaofiltrar">Buscar</button>
     <button id="limparfiltro">limpar</button>
-    <table id="tabela">
-      <colgroup span="8"></colgroup>
-      <tr>
-        <th>Nome</th>
-        <th>Descrição</th>
-        <th>Valor</th>
-        <th>Data da Venda</th>
-        <th>Mês</th>
-        <th>Sinal</th>
-        <th>Status</th>
-        <th>Primeiro Pagamento</th>
-      </tr>
-      <tr>
-        <td>USA</td>
-        <td>Capital dos Estados Unidos</td>
-        <td>309 milhões</td>
-        <td>01/01/2023</td>
-        <td>Janeiro</td>
-        <td>Sim</td>
-        <td>Pago</td>
-        <td>01/02/2023</td>
-      </tr>
-      <tr>
-        <td>Sweden</td>
-        <td>Capital da Suécia</td>
-        <td>9 milhões</td>
-        <td>01/02/2023</td>
-        <td>Fevereiro</td>
-        <td>Não</td>
-        <td>Pendente</td>
-        <td>01/03/2023</td>
-      </tr>
-    </table>
 
     <form id="formItem">
-        <label for="nome" >Nome:</label>
-        <input type="text" id="nome" required>
+        <label for="nome" >Conta:</label>
+        <input type="text" id="conta" required>
         <br>
         <label for="descricao">Descrição:</label>
         <input type="text" id="descricao" required>
@@ -65,8 +35,11 @@
         <label for="valor">Valor:</label>
         <input type="text" id="valor" required>
         <br>
-        <label for="dataVenda">Data da Venda:</label>
-        <input type="date" id="dataVenda" required>
+        <label for="dataVenda">Data de Pagamento:</label>
+        <input type="text" id="dpagamento" required>
+        <br>
+        <label for="sinal">Data de Vencimento:</label>
+        <input type="date" id="data" required>
         <br>
         <label for="mes">Mês:</label>
         <select name="mes" id="mes">
@@ -84,15 +57,9 @@
           <option value="dezembro">Dezembro</option>
         </select>
         <br>
-        <label for="sinal">Sinal:</label>
-        <input type="text" id="sinal" required>
-        <br>
-        <label for="status">Status:</label>
-        <input type="text" id="status" required>
-        <br>
-        <label for="primeiroPagamento">Primeiro Pagamento:</label>
-        <input type="text" id="primeiroPagamento" required>
-        <br>
+        <label for="status">Forma de Pagamento:</label>
+        <input type="text" id="formapagamento" required>
+       <br>
         <input type="submit" value="Adicionar">
         
     </form>
@@ -100,7 +67,7 @@
       <button id="sair" class="bsair">Sair</button>
       <button id="enviar">subir</button>
     </footer>
-    <script type="module" src="main.js"></script>
-    <script type="module" src="subirfire.js"></script>
+    <script type="module" src="/js/main.js"></script>
+    <script type="module" src="/js/cadastroContas.js"></script>
 </body>
 </html>

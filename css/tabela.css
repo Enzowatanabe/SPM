@@ -1,0 +1,33 @@
+.tabelapai {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  .tabelapai th {
+    padding: 8px;
+    border-bottom: 1px solid black;
+    width: 128.13px;
+  }
+  
+
+  
+  .tabela {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+  }
+  
+  .tabela th,
+  .tabela td {
+    padding: 8px;
+    width: 128.13px;
+    white-space: nowrap;
+    border-bottom: 1px solid black;
+  }
+  
+  @media screen and (max-width: 600px) {
+    .tabelapai {
+      overflow-x: auto;
+    }
+  }

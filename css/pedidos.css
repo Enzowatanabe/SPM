@@ -1,0 +1,11 @@
+header{
+    display: flex;
+    justify-content:space-between;
+    
+}
+
+.txtheader{
+    align-items: center;
+    text-align: center;
+}
+

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/pedidos.css">
+    <link rel="stylesheet" href="/css/tabela.css">
+    <script type="module" src="/js/authuser.js"></script>
+    <title>SPM - COMPRAS</title>
+</head>
+<body>
+  <header>
+    <img src="/logo.png" alt="logo da ponto Movel">
+    <div class="txtheader">    
+      <p>Sistema Pontomovel</p>
+      <p>Contas</p>
+    </div>
+    <div>
+      <button id="sair">Sair</button>
+      <form action="home.html">
+        <input type="submit" value="Home"/>
+      </form>
+    </div>
+  </header>
+  <main>
+    <input type="text" id="filtro" placeholder="Digite sua busca">
+    <button id="botaofiltrar">Buscar</button>
+    <button id="limparfiltro">limpar</button>
+  <section class="containerpai">
+
+    <section class="container">
+        <table class="tabelapai">
+        <thead>
+            <tr>
+            <th>Cliente</th>
+            <th>Descrição</th>
+            <th>Valor Total</th>
+            <th>Data de Pagamento</th>
+            <th>Sinal</th>
+            <th>Mês</th>
+            <th>Data sinal</th>
+            <th>Status</th>
+            <th>1º Pagamento</th>
+            <th>Data 1º Pagamento</th>
+            <th>Mês</th>
+            <th>Status</th>
+            <th>2º Pagamento</th>
+            <th>Data 2º Pagamento</th>
+            <th>Mês</th>
+            <th>Status</th>
+            <th>Orçamento</th>
+            </tr>
+        </thead>
+        </table>
+        <div class="tabelainterna">
+            <table id="tabela" class="tabela">
+            </table>
+        </div>
+        
+    </section>
+  </section>  
+  </main>
+  <footer>
+  </footer>
+  <script type="module" src="/js/cliente.js"></script>
+</body>
+</html>

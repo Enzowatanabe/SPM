@@ -23,7 +23,7 @@ const firebaseConfig = {
     .then((userCredential) => {
             
         const user = userCredential.user;
-        window.location.href = "index.html";
+        window.location.href = "/html/home.html";
           
 })
     .catch((error) => {

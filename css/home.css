@@ -1,0 +1,38 @@
+.container1{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.menuitens{
+    display: flex;
+    width: 100%;
+}
+
+
+
+.menuitens ul ul {
+    display: none;
+}
+
+.menuitens ul .mostra {
+    display: block;
+}
+
+ul li{
+    list-style-type: none;
+    text-decoration: none;
+}
+
+.sectioncards{
+    display: flex;
+    gap: 40px;
+
+}
+
+.cards{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    border-radius: 5px;
+}
