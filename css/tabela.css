@@ -1,30 +1,62 @@
+* {
+  padding:0;
+  margin:0;
+  list-style:none;
+  }
+
+header p{
+  text-align: center;
+  padding-top: 20px;
+}
+
+
+
+.container{
+  background-color: aqua;
+}
+
+
+
+
+
+
+
 .tabelapai {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 20px;
+    background-color: aquamarine;
+    margin-top: 60px;
   }
   
   .tabelapai th {
-    padding: 8px;
     border-bottom: 1px solid black;
-    width: 128.13px;
+    width: 103px;
+    border-right: 1px solid black;
+    text-align: center;
+
   }
-  
+
 
   
-  .tabela {
-    width: 100%;
+  .tabela,
+  .tabela tr {
+    background-color: blueviolet;
     border-collapse: collapse;
     text-align: center;
+    width: 100%;
   }
   
-  .tabela th,
   .tabela td {
-    padding: 8px;
-    width: 128.13px;
+    text-align: center;
+    max-width: 120px;
+    min-width: 119px;
     white-space: nowrap;
     border-bottom: 1px solid black;
+    border-right: 1px solid black;
   }
+
+
   
   @media screen and (max-width: 600px) {
     .tabelapai {

@@ -39,15 +39,19 @@ function exibirTabela(data) {
         const linha = document.createElement("tr")
         for (const coluna of colunas) {
             const elementoColuna = document.createElement("td");
+            if (coluna === "Valor") {
+                const valorFormatado = parseFloat(dataLinha[coluna]).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+                elementoColuna.innerText = valorFormatado;
+            } else {
+                elementoColuna.innerText = dataLinha[coluna];
+            }
 
-            elementoColuna.innerText = dataLinha[coluna]
-            linha.appendChild(elementoColuna)
+            linha.appendChild(elementoColuna);
+
         }
-
         tabela.appendChild(linha);        
     }
 }
-
 async function recarregarTabela() {
     const data = await buscarPedidos();
     const valorTotal = Object.values(data).map((it) => Number(it.Valor) ?? 0).filter((valor) => !isNaN(valor)).reduce((total, cur) => cur + total, 0);

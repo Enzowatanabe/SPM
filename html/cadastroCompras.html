@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/pedidos.css">
+    <link rel="stylesheet" href="/css/cadastroCompras.css">
     <script type="module" src="authuser.js"></script>
     <title>SPM - CADASTRO COMPRAS</title>
 </head>
@@ -11,8 +12,8 @@
   <header>
       <img src="/logo.png" alt="logo da ponto Movel">
     <div class="txtheader">    
-      <p>Sistema Pontomovel</p>
-      <p>Compras</p>
+      <p>SPM - PONTOMÓVEL</p>
+      <p>COMPRAS</p>
     </div>
     <div>
       <button id="sair">Sair</button>
@@ -21,52 +22,47 @@
       </form>
     </div>
   </header>
-    <input type="text" id="filtro" placeholder="Digite sua busca">
-    <button id="botaofiltrar">Buscar</button>
-    <button id="limparfiltro">limpar</button>
+  <section class="containerInput">
+    <div class="containerForm">
+     
+        <div class="divLabel">
+          <label for="nome" >Loja:</label>
+          <label for="descricao">Descrição:</label>
+          <label for="valor">Valor:</label>
+          <label for="dataVenda">Cliente:</label>
+          <label for="sinal">Data:</label>
+          <label for="mes">Mês:</label>
+          <label for="status">Tipo de Pagamento:</label>
+        </div>
+        <div class="divInput">
+          <form id="formItem" class="formInput">
+            <input type="text" id="loja" required>
+            <input type="text" id="descricao">
+            <input type="text" id="valor" required>
+            <input type="text" id="cliente" required>
+            <input type="date" id="data" required>
+            <select name="mes" id="mes">
+              <option value="janeiro">janeiro</option>
+              <option value="fevereiro">fevereiro</option>
+              <option value="março">março</option>
+              <option value="abril">abril</option>
+              <option value="maio">maio</option>
+              <option value="junho">junho</option>
+              <option value="julho">julho</option>
+              <option value="agosto">agosto</option>
+              <option value="setembro">setembro</option>
+              <option value="outubro">outubro</option>
+              <option value="novembro">novembro</option>
+              <option value="dezembro">dezembro</option>
+            </select>
+            <input type="text" id="tipopagamento" required>
+            <button id="enviar">subir</button>
+          </form>
+        </div>
+      
+    </div>
+  </section>
 
-    <form id="formItem">
-        <label for="nome" >Loja:</label>
-        <input type="text" id="loja" required>
-        <br>
-        <label for="descricao">Descrição:</label>
-        <input type="text" id="descricao" required>
-        <br>
-        <label for="valor">Valor:</label>
-        <input type="text" id="valor" required>
-        <br>
-        <label for="dataVenda">Cliente:</label>
-        <input type="text" id="cliente" required>
-        <br>
-        <label for="sinal">Data:</label>
-        <input type="date" id="data" required>
-        <br>
-        <label for="mes">Mês:</label>
-        <select name="mes" id="mes">
-          <option value="janeiro">Janeiro</option>
-          <option value="fevereiro">Fevereiro</option>
-          <option value="março">Março</option>
-          <option value="abril">Abril</option>
-          <option value="maio">Maio</option>
-          <option value="junho">Junho</option>
-          <option value="julho">Julho</option>
-          <option value="agosto">Agosto</option>
-          <option value="setembro">Setembro</option>
-          <option value="outubro">Outubro</option>
-          <option value="novembro">Novembro</option>
-          <option value="dezembro">Dezembro</option>
-        </select>
-        <br>
-        <label for="status">Tipo de Pagamento:</label>
-        <input type="text" id="tipopagamento" required>
-       <br>
-        <input type="submit" value="Adicionar">
-        
-    </form>
-    <footer>
-      <button id="sair" class="bsair">Sair</button>
-      <button id="enviar">subir</button>
-    </footer>
     <script type="module" src="/js/main.js"></script>
     <script type="module" src="/js/cadastroCompras.js"></script>
 </body>

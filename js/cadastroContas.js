@@ -31,9 +31,9 @@ botaogo.addEventListener("click", async()=>{
     const docRef = await addDoc(collection(db, "Contas"), {
     Conta: conta,
     Descrição: descricao,
-    Valor: valor,
-    DataPagamento: dpagamento,
-    Data: data,
+    Valor: Number(valor),
+    DataPagamento: new Date(dpagamento),
+    Data: new Date(data),
     Mês: mes,
     FormaPagamento: fpagamento,
     

@@ -1,0 +1,21 @@
+table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  th,
+  td {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+  }
+  
+  /* Estilos para os botões e input */
+  #filtro,
+  #botaofiltrar,
+  #limparfiltro {
+    margin-bottom: 10px;
+  }

@@ -1,6 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
 
-import { getFirestore, collection, doc, addDoc, setDoc, getDoc, getDocs, query} from "https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore.js";
+import { getFirestore, collection, addDoc} from "https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore.js";
 
 const firebaseConfig = {
     apiKey: "AIzaSyBU4cy14ZPyRLAWD_qoI-58HiIAsaFVqKw",
@@ -40,7 +40,24 @@ botaogo.addEventListener("click", async()=>{
    
     
 },{merge:true});
-console.log("Document written with ID: ", docRef);
+alert("Document written with ID: ", docRef);
+
+document.getElementById('loja').value = '';
+  
+ 
+document.getElementById('descricao').value = '';
+  document.getElementById('valor').value = '';
+  document.getElementById('cliente').value = '';
+  document.getElementById('data').value = '';
+  
+ 
+document.getElementById('mes').value = '';
+  document.getElementById('tipopagamento').value = '';
+
+  
+
+ 
+
 
 await recarregarTabela();
-})
+});

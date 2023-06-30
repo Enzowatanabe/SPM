@@ -17,7 +17,7 @@ const db = getFirestore(app);
 
 
 
-const colunas = ["Cliente", "descrição", "ValorTotal", "DataVenda", "Sinal", "Mês", "DataSinal","Status", "Pagamento", "Data1Pag", "Mês2", "Status1", "Pagamento2", "Data2Pag", "Mês3", "Status2", "Orçamento"];
+const colunas = ["Cliente","ValorTotal", "DataVenda", "Sinal", "Mês", "DataSinal","Status", "Pagamento", "Data1Pag", "Mês2", "Status1", "Pagamento2", "Data2Pag", "Mês3", "Status2", "Orçamento"];
 
 
 const q = query(collection(db, "Clientes"))
@@ -33,7 +33,7 @@ async function buscarPedidos() {
 }
 
 
-
+//imprimir dados do firebase na tela
 function exibirTabela(data) {
     const tabela = document.getElementById("tabela");
     tabela.innerHTML = "";
@@ -43,19 +43,34 @@ function exibirTabela(data) {
         const linha = document.createElement("tr")
         for (const coluna of colunas) {
             const elementoColuna = document.createElement("td");
+            //transformar o numero em moeda real
+            
+            if (coluna === "ValorTotal" || coluna === "Pagamento" || coluna === "Pagamento2") {
+                const valorFormatado = parseFloat(dataLinha[coluna]).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+                elementoColuna.innerText = valorFormatado;
+            } else {
+                elementoColuna.innerText = dataLinha[coluna];
+            }
 
-            elementoColuna.innerText = dataLinha[coluna]
-            linha.appendChild(elementoColuna)
+            linha.appendChild(elementoColuna);
+
         }
-
         tabela.appendChild(linha);        
     }
 }
 
 async function recarregarTabela() {
     const data = await buscarPedidos();
+    const valorTotal = Object.values(data).map((it) => Number(it.Valor) ?? 0).filter((valor) => !isNaN(valor)).reduce((total, cur) => cur + total, 0);
+    console.log({valorTotal});
     exibirTabela(data);
 }
+
+
+// async function recarregarTabela() {
+//     const data = await buscarPedidos();
+//     exibirTabela(data);
+// }
 
 await recarregarTabela();
 

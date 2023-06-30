@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/pedidos.css">
+    <link rel="stylesheet" href="/css/tabela.css">
+    <link rel="stylesheet" href="/css/bc.css">
+    <link rel="stylesheet" href="/css/grafico.css">
+    <script type="module" src="/js/authuser.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
+    <title>SPM - COMPRAS</title>
+</head>
+<body>
+  <header>
+    <img src="/logo.png" alt="logo da ponto Movel">
+    <div class="txtheader">    
+      <p>Sistema Pontomovel</p>
+      <p>Contas</p>
+    </div>
+    <div>
+      <button id="sair">Sair</button>
+      <form action="home.html">
+        <input type="submit" value="Home"/>
+      </form>
+    </div>
+  </header>
+  <main>
+    <input type="text" id="filtro" placeholder="Digite sua busca">
+    <button id="botaofiltrar">Buscar</button>
+    <button id="limparfiltro">limpar</button>
+    <input type="text" id="filtro" placeholder="Filtrar">
+<button id="botaofiltrar">Filtrar</button>
+<button id="limparfiltro">Limpar Filtro</button>
+  <section class="containerpai">
+    <div class="containerGrafico">
+    <canvas id="grafico" class="grafico"></canvas>
+    </div>
+    <div class="containerGrafico2">
+      <canvas id="grafico2" class="grafico2"></canvas>
+    </div>
+    <div class="containerGrafico3">
+      <canvas id="grafico3" class="grafico3"></canvas>
+    </div>
+  </section>
+<section class="secgraf4">
+  <div class="containerGrafico4">
+    <canvas id="grafico4" class="grafico4" style="position: relative; height:40vh; width:80vw"></canvas>
+  </div>
+</section>
+  
+    
+
+  </main>
+  <footer>
+  </footer>
+  
+  <script type="module" src="/js/buscarClientes.js"></script>
+  <!--  -->
+</body>
+</html>
