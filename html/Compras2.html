@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Segunda Página</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
+</head>
+<body>
+    <h1>Segunda Página</h1>
+    <!-- Adicione essas linhas dentro da tag <main> -->
+<div>
+    <label for="mes">Mês:</label>
+    <input type="text" id="mes">
+    <button id="calcular">Calcular</button>
+    <button id="limpar">Limpar</button>
+</div>
+<div>
+    <span>Soma total:</span>
+    <span id="soma-total"></span>
+</div>
+<div class="containerGrafico2">
+    <canvas id="grafico2" class="grafico2"></canvas>
+  </div>
+
+    <table id="tabela">
+        <tr>
+            <th>Cliente</th>
+            <th>Data</th>
+            <th>Loja</th>
+            <th>Mês</th>
+            <th>TipoPagamento</th>
+            <th>Valor</th>
+            <th>descrição</th>
+        </tr>
+    </table>
+    <div id="paginacao">
+        <button id="anterior">Anterior</button>
+        <span id="pagina-atual"></span>
+        <button id="proximo">Próximo</button>
+    </div>
+    <script type="module" src="/js/compras2.js"></script>
+</body>
+</html>

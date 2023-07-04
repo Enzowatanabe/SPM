@@ -22,6 +22,11 @@ header{
     text-align: center;
     padding-top: 20px;
     font-size: 30px;
-    font-family: 'Roboto', sans-serif;
+    
 }
 
+header p{
+    text-align: center;
+    padding-top: 20px;
+    
+  }

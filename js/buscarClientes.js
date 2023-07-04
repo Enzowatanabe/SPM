@@ -15,50 +15,8 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-
-
-
-
 const q = query(collection(db, "Clientes"))
 
-// async function buscarPedidos() {
-//     const querySnapshot = await getDocs(q); 
-//     const data = {};
-//     querySnapshot.forEach((doc) => {
-//         data[doc.id] = doc.data();
-//     })
-     
-//     return data;
-// }
-
-// async function buscarDados() {
-//     const collections = await getDocs(collection(db, "Clientes"));
-//     const data = {};
-  
-//     for (const collection of collections.docs) {
-//       const collectionData = collection.data();
-//       const valorTotal = calcularValorTotal(collectionData);
-//       data[collectionData.Cliente] = valorTotal;
-//     }
-  
-//     return data;
-//   }
-  
-//   function calcularValorTotal(collectionData) {
-//     let valorTotal = 0;
-  
-//     // Calcular o valor total da coleção
-//     for (const docId in collectionData) {
-//       if (docId !== "Cliente") {
-//         valorTotal += parseFloat(collectionData[docId].ValorTotal);
-//       }
-//     }
-  
-//     return valorTotal;
-//   }
-  
-
-  
   // ... GRAFICO CLIENTES
 
 function exibirTabela(data) {
@@ -231,7 +189,6 @@ await recarregarGraficoContas();
 
 // ...
 
-
 // ------------------------------------------------------------------------------------------
 async function calcularSomaPorMes() {
   const queryClientes = query(collection(db, "Clientes"));
@@ -242,7 +199,7 @@ async function calcularSomaPorMes() {
     getDocs(queryClientes),
     getDocs(queryCompras),
     getDocs(queryContas),
-    
+     
   ]);
 
   const somaClientesPorMes = {};
@@ -261,13 +218,13 @@ async function calcularSomaPorMes() {
         somaClientesPorMes[mes] = Number(valorTotal);
       }
     }
-    console.log(mes)
   });
 
   ComprasSnapshot.forEach((doc) => {
     const data = doc.data();
     const mes = new Date(data.Data).getMonth() + 1;
     const valor = data.Valor; 
+    
 
     if (mes) {
       if (somaComprasPorMes[mes]) {
@@ -276,6 +233,7 @@ async function calcularSomaPorMes() {
         somaComprasPorMes[mes] = Number(valor);
       }
     }
+    console.log(somaComprasPorMes)
   });
 
 
@@ -291,7 +249,7 @@ async function calcularSomaPorMes() {
         somaContasPorMes[mes] = Number(valor);
       }
     }
-    console.log(mes)
+    
   });
   
   return {
@@ -299,7 +257,9 @@ async function calcularSomaPorMes() {
     Compras: somaComprasPorMes,
     Contas: somaContasPorMes,
   };
+  
 }
+
 
 function getAllMonths(somas) {
   const meses = new Set();
@@ -345,8 +305,7 @@ function exibirGrafico(somas) {
   // meses: [6, 7, ...]
   // mesesNomes: ["Junho", "Julho", ...]
   const mesesNomes = meses.map((numero) => nomesMeses[numero])
-  console.log(meses);
-  console.log(mesesNomes);
+ 
 
   const ctx = document.getElementById("grafico4").getContext("2d");
   const chartConfig = {
@@ -395,21 +354,6 @@ function exibirGrafico(somas) {
   const myChart = new Chart(ctx, chartConfig);
 }
 
-
-
-
-// function getAllMonths(somas) {
-//   const meses = new Set();
-//   Object.keys(somas.Clientes).forEach((mes) => meses.add(mes));
-//   Object.keys(somas.Compras).forEach((mes) => meses.add(mes));
-//   Object.keys(somas.Contas).forEach((mes) => meses.add(mes));
-//   return Array.from(meses).sort((a, b) => new Date(a) - new Date(b));
-// }
-
-// function getValoresPorMes(valores, meses) {
-//   return meses.map((mes) => (valores[mes] ? valores[mes] : 0));
-// }
-// ...
 
 async function recarregarGrafico() {
   const somas = await calcularSomaPorMes();

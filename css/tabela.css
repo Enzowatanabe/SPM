@@ -9,14 +9,9 @@ header p{
   padding-top: 20px;
 }
 
-
-
-.container{
-  background-color: aqua;
+.tabelainterna{
+  height: max-content;
 }
-
-
-
 
 
 
@@ -41,7 +36,6 @@ header p{
   
   .tabela,
   .tabela tr {
-    background-color: blueviolet;
     border-collapse: collapse;
     text-align: center;
     width: 100%;
